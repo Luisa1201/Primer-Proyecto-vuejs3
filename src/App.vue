@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-
+const title = ref('Mega Ejemplo')
 const solicitudes = ref(0);
 const incrementar = () => {
   solicitudes.value++
@@ -18,6 +18,7 @@ const decrementar = () => {
 </script>
 
 <template>
+  <h2>{{ title }}</h2>
   <div class="user">
     
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -39,6 +40,7 @@ const decrementar = () => {
 <div v-show="solicitudes > 0">
   wooho!!! Solicitudes
 </div>
+<input type="text" v-model="title">
 </template>
 
 <style scoped>
